@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow">
-    <div class="text-5xl font-extrabold text-left mx-6 mb-4">
+    <div class="text-5xl font-extrabold text-left mx-6 mb-2">
       <span
         class="
           bg-clip-text
@@ -15,36 +15,50 @@
     </div>
     <div class="h-24">
       <transition name="fade">
-        <div class="text-5xl text-purple-600 mx-6 text-center" v-if="show">
+        <!-- text-5xl text-purple-600 mx-6 text-center -->
+        <div
+          class="
+            text-5xl
+            font-extrabold
+            bg-clip-text
+            text-transparent
+            bg-gradient-to-r
+            from-green-400
+            to-blue-500
+            text-left
+            mx-6
+          "
+          v-if="show"
+        >
           {{ text }}
         </div>
       </transition>
     </div>
     <div>
-      <p class="text-purple-600 text-black text-left text-lg mx-6 my-8">
+      <p class="text-purple-600 text-2xl text-left font-medium mx-6 my-8">
         Desde 2020 estamos renovando los servicios de personalizacion en
         Guatemala. Trayendo innovacion y creatividad. 🙌
       </p>
     </div>
-    <div class="m-6  shadow-xl">
+    <div class="m-6">
       <img
         src="../assets/groot3d.webp"
         alt=""
-        class="rounded-xl border-white border-8"
+        class="rounded-xl border-white border-8 shadow-xl"
       />
     </div>
-    <div class="m-6  shadow-xl">
+    <div class="m-6 ">
       <img
         src="../assets/sublimacion.webp"
         alt=""
-        class="rounded-xl border-white border-8"
+        class="rounded-xl border-white border-8 shadow-xl"
       />
     </div>
-    <div class="m-6 shadow-xl">
+    <div class="m-6 ">
       <img
         src="../assets/gaudylaser.webp"
         alt=""
-        class="rounded-xl border-white border-8"
+        class="rounded-xl border-white border-8 shadow-xl"
       />
     </div>
   </div>
@@ -65,8 +79,12 @@ export default {
       count: 0,
       show: true,
       text: "GRABADO LASER",
-      textPool: ["SUBLIMACIÓN", "IMPRESIÓN 3D", "GRABADO LASER"],
-      imagePool: ["../assets/groot3d.webp", "../assets/gaudylaser.webp", "../assets/sublimacion.webp"],
+      textPool: ["Sublimación", "Impresión 3D", "Grabado Laser"],
+      imagePool: [
+        "../assets/groot3d.webp",
+        "../assets/gaudylaser.webp",
+        "../assets/sublimacion.webp",
+      ],
     });
     return { ...toRefs(state) };
   },
