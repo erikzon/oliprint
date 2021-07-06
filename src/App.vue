@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-screen">
-    <Header />
+    <Header class="shadow-md p-4 mb-6 bg-white" />
 
     <router-view />
     <div class="fixed inset-x-0 bottom-0">

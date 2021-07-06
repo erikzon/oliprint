@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 m-4 gap-3 ">
+  <div class="grid grid-cols-3 gap-3 ">
     <img
       alt="oliprint logo"
       src="../assets/oliprint.svg"

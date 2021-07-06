@@ -13,7 +13,7 @@
         Somos Expertos en</span
       >
     </div>
-    <div class="h-24">
+    <div class="h-16">
       <transition name="fade">
         <!-- text-5xl text-purple-600 mx-6 text-center -->
         <div
@@ -78,7 +78,7 @@ export default {
     const state = reactive({
       count: 0,
       show: true,
-      text: "GRABADO LASER",
+      text: "Grabado Laser",
       textPool: ["Sublimación", "Impresión 3D", "Grabado Laser"],
       imagePool: [
         "../assets/groot3d.webp",
