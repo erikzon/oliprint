@@ -44,7 +44,7 @@
         X
       </button>
       <div class="flex-shrink-0 bg-color-white">
-        <img class="h-16 w-16" src="src\assets\oliprint2.svg" />
+        <img class="h-16 w-16" src="../assets/oliprint2.svg" />
       </div>
       <div>
         <span class="text-xl font-medium text-black">Contactanos</span>
