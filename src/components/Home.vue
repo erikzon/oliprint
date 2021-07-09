@@ -1,60 +1,73 @@
 <template>
-  <div class="flex-grow">
-    <div class="text-5xl font-extrabold text-left mx-6 mb-2">
-      <span
-        class="
-          bg-clip-text
-          text-transparent
-          bg-gradient-to-r
-          from-green-400
-          to-blue-500
-        "
-      >
-        Somos Expertos en</span
-      >
-    </div>
-    <div class="h-16">
-      <transition name="fade">
-        <!-- text-5xl text-purple-600 mx-6 text-center -->
-        <div
+  <div class="flex-grow lg:grid lg:grid-cols-6">
+    <div class="lg:col-span-3">
+      <div class="text-5xl lg:text-6xl font-extrabold text-left mx-6 mb-2">
+        <span
           class="
-            text-5xl
-            font-extrabold
             bg-clip-text
             text-transparent
             bg-gradient-to-r
             from-green-400
             to-blue-500
-            text-left
-            mx-6
           "
-          v-if="show"
         >
-          {{ text }}
-        </div>
-      </transition>
+          Somos Expertos en</span
+        >
+      </div>
+      <div class="h-16">
+        <transition name="fade">
+          <!--use decoration-clone to repeat the inner gradient for each line break-->
+          <div
+            class="
+              text-5xl
+              lg:text-6xl
+              font-extrabold
+              bg-clip-text
+              text-transparent
+              bg-gradient-to-r
+              from-green-400
+              to-blue-500
+              text-left
+              mx-6
+            "
+            v-if="show"
+          >
+            {{ text }}
+          </div>
+        </transition>
+      </div>
+
+      <div>
+        <p
+          class="
+            text-purple-600 text-2xl text-left
+            font-light
+            lg:font-bold
+            mx-6
+            my-8
+          "
+        >
+          Desde 2020 estamos renovando los servicios de personalizacion en
+          Guatemala. Trayendo innovacion y creatividad. 🙌
+        </p>
+      </div>
     </div>
-    <div>
-      <p class="text-purple-600 text-2xl text-left font-medium mx-6 my-8">
-        Desde 2020 estamos renovando los servicios de personalizacion en
-        Guatemala. Trayendo innovacion y creatividad. 🙌
-      </p>
-    </div>
-    <div class="m-6">
+    <div class="m-6 lg:m-0 lg:w-52 col-span-1 row-span-1">
       <img
         src="../assets/groot3d.webp"
         alt=""
-        class="rounded-xl border-white border-8 shadow-xl"
+        class="rounded-xl border-white border-8 shadow-xl object-contain"
       />
     </div>
-    <div class="m-6 ">
+
+    <div class="m-6 lg:m-0 lg:w-52">
       <img
         src="../assets/sublimacion.webp"
         alt=""
         class="rounded-xl border-white border-8 shadow-xl"
       />
     </div>
-    <div class="m-6 ">
+    <div class="m-6 lg:m-0 lg:w-52">
       <img
         src="../assets/gaudylaser.webp"
         alt=""

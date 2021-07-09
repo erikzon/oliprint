@@ -1,14 +1,13 @@
 <template>
-  <div class="grid grid-cols-3 gap-3 ">
+  <div class="grid grid-cols-3 gap-3">
     <img
       alt="oliprint logo"
       src="../assets/oliprint.svg"
-      class="row-span-2 col-span-2"
+      class="row-span-2 col-span-2 lg:w-80 lg:h-14 mx-auto"
       @click="this.$router.push('/')"
     />
-    <span @click="this.$router.push('About')" class="botonHeader">Nosotros</span>
-    <span @click="this.$router.push('Cotizar')" class="botonHeader"   >Cotizar</span
-    >
+    <button @click="this.$router.push('About')" class="botonHeader">NOSOTROS</button>
+    <button @click="this.$router.push('Cotizar')" class="botonHeader"   >COTIZAR</button>
   </div>
 </template>
 
@@ -19,12 +18,15 @@ export default {};
 <style>
 .botonHeader {
   @apply text-purple-800
-          font-bold
-          text-xl
+          font-light
+          text-lg
           rounded-full
           border border-purple-800
           hover:text-white
           hover:bg-purple-800
           hover:border-transparent
+          lg:-my-1
+          lg:mx-36
+          
 }
 </style>

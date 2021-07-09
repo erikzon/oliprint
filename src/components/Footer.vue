@@ -10,25 +10,31 @@
         bottom-0
         right-0
         bg-white
+        lg:w-96
         rounded-xl
         shadow-md
-        flex
         items-center
+        flex
+        lg:fixed
         space-x-4
+        
       "
     >
-      <div
+      <button
         class="
-          font-medium
+          font-light
           text-base
           rounded-full
           bg-white
           text-purple-800
           border border-purple-800
+          hover:text-white
+          hover:bg-purple-800
           px-2
           mr-2
           -mt-2
           absolute
+          lg:relative
           top-0
           right-0
           equis
@@ -36,19 +42,19 @@
         @click="show = false"
       >
         X
-      </div>
+      </button>
       <div class="flex-shrink-0 bg-color-white">
         <img class="h-16 w-16" src="src\assets\oliprint2.svg" />
       </div>
       <div>
-        <div class="text-xl font-medium text-black">Contactanos</div>
-        <p class="text-gray-500">Sera un gusto atenderte 😊</p>
+        <span class="text-xl font-medium text-black">Contactanos</span>
+        <p class="text-gray-600">Sera un gusto atenderte 😊</p>
       </div>
       <button
         class="
           px-2
           text-purple-800
-          font-semibold
+          font-light
           rounded-full
           border border-purple-800
           hover:text-white
@@ -58,7 +64,7 @@
         h
       >
         <a href="https://api.whatsapp.com/send?phone=50242112585&text=Hola"
-          >Enviar Mensaje</a
+          >ENVIAR MENSAJE</a
         >
       </button>
     </div>
@@ -84,11 +90,14 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (to.name == 'Home') {
-        this.show= true;        
+      if (to.name == "Home") {
+        this.show = true;
+      } else if (to.name == "Cotizar") {
+        this.show = false;
       }
-    }
-  }
+
+    },
+  },
 };
 </script>
 
