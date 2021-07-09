@@ -69,7 +69,7 @@
     </div>
     <div class="m-6 lg:m-0 lg:w-52">
       <img
-        src="../assets/gaudylaser.webp"
+        src="../assets/gaudyLaser.webp"
         alt=""
         class="rounded-xl border-white border-8 shadow-xl"
       />
