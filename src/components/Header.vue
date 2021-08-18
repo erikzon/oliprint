@@ -1,9 +1,9 @@
 <template>
-  <div class="grid grid-cols-3 gap-3">
+  <div class="grid grid-cols-3 gap-3 headercolor">
     <img
       alt="oliprint logo"
       src="../assets/oliprint.svg"
-      class="row-span-2 col-span-2 lg:w-80 lg:h-14 mx-auto"
+      class="row-span-2 col-span-2 lg:w-80 lg:h-16 mx-auto cursor-pointer"
       @click="this.$router.push('/')"
     />
     <button @click="this.$router.push('About')" class="botonHeader">NOSOTROS</button>
@@ -17,16 +17,18 @@ export default {};
 
 <style>
 .botonHeader {
-  @apply text-purple-800
-          font-light
-          text-lg
+  @apply text-purple-200
+          pt-1
+          lg:text-xl
+          text-base
           rounded-full
-          border border-purple-800
-          hover:text-white
-          hover:bg-purple-800
-          hover:border-transparent
+          border border-purple-200
+          hover:text-purple-900
+          hover:bg-white
           lg:-my-1
-          lg:mx-36
-          
+          lg:mx-36         
+}
+.headercolor {
+  background-color: rgb(33, 10, 54) !important;
 }
 </style>

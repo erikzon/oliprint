@@ -1,7 +1,7 @@
 <template>
-  <div class="flex-grow lg:grid lg:grid-cols-6">
+  <div class="flex-grow lg:grid lg:grid-cols-6 lg:mx-16">
     <div class="lg:col-span-3">
-      <div class="text-5xl lg:text-6xl font-extrabold text-left mx-6 mb-2">
+      <div class="text-5xl lg:text-7xl font-extrabold text-left mx-6 mb-2">
         <span
           class="
             bg-clip-text
@@ -20,7 +20,7 @@
           <div
             class="
               text-5xl
-              lg:text-6xl
+              lg:text-7xl
               font-extrabold
               bg-clip-text
               text-transparent
@@ -29,30 +29,24 @@
               to-blue-500
               text-left
               mx-6
+              lg:my-4
             "
-            v-if="show"
+            v-if="state.show"
           >
-            {{ text }}
+            {{ state.text }}
           </div>
         </transition>
       </div>
-
-      <div>
-        <p
-          class="
-            text-purple-600 text-2xl text-left
-            font-light
-            lg:font-bold
-            mx-6
-            my-8
-          "
-        >
-          Desde 2020 estamos renovando los servicios de personalizacion en
-          Guatemala. Trayendo innovacion y creatividad. 🙌
-        </p>
-      </div>
     </div>
-    <div class="m-6 lg:m-0 lg:w-52 col-span-1 row-span-1">
+    <div class="lg:col-span-3">
+      <p
+        class="text-white text-2xl text-left lg:text-4xl lg:font-bold mx-6 my-8"
+      >
+        Desde 2020 estamos renovando los servicios de personalizacion en
+        Guatemala. Trayendo innovacion y creatividad. 🙌
+      </p>
+    </div>
+    <!-- <div class="m-6 lg:m-0 lg:w-52 col-span-1 row-span-1">
       <img
         src="../assets/groot3d.webp"
         alt=""
@@ -73,35 +67,32 @@
         alt=""
         class="rounded-xl border-white border-8 shadow-xl"
       />
-    </div>
+    </div> -->
   </div>
+  <Servicios />
 </template>
 
-<script>
-import { onMounted, reactive, toRefs } from "vue";
-export default {
-  setup() {
-    onMounted(() => {
-      setInterval(() => {
-        state.show = !state.show;
-        state.count++;
-        state.text = state.textPool[(state.count - 1) % state.textPool.length];
-      }, 1200);
-    });
-    const state = reactive({
-      count: 0,
-      show: true,
-      text: "Grabado Laser",
-      textPool: ["Sublimación", "Impresión 3D", "Grabado Laser"],
-      imagePool: [
-        "../assets/groot3d.webp",
-        "../assets/gaudylaser.webp",
-        "../assets/sublimacion.webp",
-      ],
-    });
-    return { ...toRefs(state) };
-  },
-};
+<script setup>
+import { onMounted, reactive } from "vue";
+import Servicios from "../components/Servicios.vue";
+onMounted(() => {
+  setInterval(() => {
+    state.show = !state.show;
+    state.count++;
+    state.text = state.textPool[(state.count - 1) % state.textPool.length];
+  }, 1200);
+});
+const state = reactive({
+  count: 0,
+  show: true,
+  text: "Grabado Laser",
+  textPool: ["Sublimación", "Impresión 3D", "Grabado Laser"],
+  imagePool: [
+    "../assets/groot3d.webp",
+    "../assets/gaudylaser.webp",
+    "../assets/sublimacion.webp",
+  ],
+});
 </script>
 
 <style scoped>

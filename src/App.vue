@@ -1,10 +1,10 @@
 <template>
-  <h1 v-if="error">prueba2</h1>
-  <div v-else> 
-    <h2 v-for="doc in docs" :key="doc">{{doc.mocoso}}</h2>
-  </div>
+  <!-- <h1 v-if="error">prueba2</h1>
+  <div v-else>
+    <h2 v-for="doc in docs" :key="doc">{{ doc.mocoso }}</h2>
+  </div> -->
   <div class="flex flex-col h-screen">
-    <Header class="shadow-md p-4 mb-6 bg-white " />
+    <Header class="shadow-md p-4 mb-6 bg-white" />
     <router-view />
     <div class="fixed inset-x-0 bottom-0">
       <Footer />
@@ -20,11 +20,11 @@ import Home from "./views/Home.vue";
 import getDocuments from "./composables/getCollection";
 import { onMounted } from "@vue/runtime-core";
 
-const {docs, error, load } = getDocuments();
+const { docs, error, load } = getDocuments();
 
 onMounted(() => {
-   load("test");
-})
+  load("test");
+});
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
@@ -32,11 +32,27 @@ onMounted(() => {
 
 <style>
 body {
-  @apply bg-gray-100;
+  /* bg-gray-100 */
+  /* bg-gradient-to-r from-purple-700 to-purple-900; */
+
+  /* background-color: #2f1046;
+  background-image: linear-gradient(
+    43deg,
+    #2f1046 0%,
+    #480f7e 29%,
+    #950cca 100%
+  ); */
+  background-image: radial-gradient(
+    circle farthest-corner at 10.2% 55.8%,
+    rgb(96, 9, 107) 0%,
+    rgb(36, 6, 91) 46.2%,
+    rgb(73, 20, 112) 90.1%
+  );
+  background-size: cover;
 }
 
 #app {
-  font-family: 'Josefin Sans', sans-serif, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

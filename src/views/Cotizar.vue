@@ -1,5 +1,5 @@
 <template>
-  <div class="leading-loose px-6 lg:mx-auto lg:px-10 lg:w-96">
+  <div class="leading-loose px-6 lg:mx-auto lg:px-10 lg:w-1/3">
     <form class="max-w-xl py-10 px-4 w-full bg-white rounded shadow-xl">
       <p
         class="
@@ -14,12 +14,14 @@
           mb-4
         "
       >
-        ¿Algun proyecto en mente?
+        ¿Algún proyecto en mente?
       </p>
       <div class="">
-        <label class="block text-2xl text-purple-800" for="cus_name">Nombre</label>
+        <label class="block text-xl text-purple-800" for="cus_name"
+          >Nombre</label
+        >
         <input
-          class="w-full px-2 py-2 text-gray-600 bg-gray-200 inputs"
+          class="inputs"
           id="cus_name"
           name="cus_name"
           type="text"
@@ -29,9 +31,11 @@
         />
       </div>
       <div class="mt-2">
-        <label class="block text-2xl text-purple-800" for="cus_email">Email</label>
+        <label class="block text-xl text-purple-800" for="cus_email"
+          >Email</label
+        >
         <input
-          class="w-full px-2 py-2 text-gray-600 bg-gray-200 inputs"
+          class="inputs"
           id="cus_email"
           name="cus_email"
           type="text"
@@ -41,11 +45,11 @@
         />
       </div>
       <div class="mt-2">
-        <label class="block text-2xl  text-purple-800" for="cus_email"
+        <label class="block text-xl text-purple-800" for="cus_email"
           >Mensaje</label
         >
         <textarea
-          class="inputs w-full px-2 py-2 text-gray-600 bg-gray-200"
+          class="inputs"
           id="cus_email"
           name="cus_email"
           type="text"
@@ -83,7 +87,17 @@ export default {};
 
 <style>
 .inputs {
-  @apply shadow-inner rounded-tl-3xl rounded-br-3xl border-2 border-opacity-0;
+  @apply shadow-inner 
+        rounded-tl-2xl 
+        rounded-br-2xl 
+        border-2 
+        border-opacity-0
+        w-full 
+        px-2 
+        py-2 
+        text-gray-900 
+        bg-gray-200
+        text-lg;
 }
 .inputs:focus {
   @apply border-2 border-purple-600 outline-none;
