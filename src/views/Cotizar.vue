@@ -1,6 +1,9 @@
 <template>
   <div class="leading-loose px-6 lg:mx-auto lg:px-10 lg:w-1/3">
-    <form class="max-w-xl py-10 px-4 w-full bg-white rounded shadow-xl">
+    <form
+      class="max-w-xl py-10 px-4 w-full bg-white rounded shadow-xl"
+      @submit.prevent="handleSubmit"
+    >
       <p
         class="
           text-4xl
@@ -28,6 +31,7 @@
           required=""
           placeholder="Escribe tu nombre"
           aria-label="Name"
+          v-model="state.name"
         />
       </div>
       <div class="mt-2">
@@ -38,10 +42,11 @@
           class="inputs"
           id="cus_email"
           name="cus_email"
-          type="text"
+          type="email"
           required=""
           placeholder="Escribe tu correo"
           aria-label="Email"
+          v-model="state.email"
         />
       </div>
       <div class="mt-2">
@@ -57,6 +62,7 @@
           placeholder="Escribe tu mensaje aqui."
           aria-label="Email"
           rows="3"
+          v-model="state.message"
         />
       </div>
       <div class="mt-4">
@@ -76,13 +82,46 @@
         >
           ENVIAR
         </button>
+        <h1 class="mt-2 p-0 rounded-2xl text-purple-900 bg-purple-100" v-if="state.status">
+          MENSAJE ENVIADO EXITOSAMENTE
+        </h1>
       </div>
     </form>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { serverTimestamp } from "@firebase/firestore";
+import { reactive } from "@vue/reactivity";
+import useCollection from "../composables/useCollection";
+
+const state = reactive({
+  name: "",
+  email: "",
+  message: "",
+  status: false,
+});
+
+const { error, addDocu } = useCollection("Cotizaciones");
+
+const handleSubmit = async () => {
+  await addDocu({
+    name: state.name,
+    email: state.email,
+    message: state.message,
+    createdAt: serverTimestamp(),
+  });
+  state.name = "";
+  state.email = "";
+  state.message = "";
+  console.log(error.value);
+  if (!error.value) {
+    state.status = true;
+    setTimeout(() => {
+      state.status = false;
+    }, 3000);
+  }
+};
 </script>
 
 <style>

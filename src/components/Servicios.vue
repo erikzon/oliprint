@@ -122,7 +122,7 @@
 }
 
 .tarjetas {
-  @apply shadow-inner bg-gray-50 rounded-tl-3xl rounded-br-3xl p-3 m-4 text-gray-800 font-light;
+  @apply shadow-inner bg-gray-50 rounded-tl-3xl rounded-br-3xl p-3 m-4  ;
 }
 
 .imagen-servicios {
