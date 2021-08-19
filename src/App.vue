@@ -4,7 +4,7 @@
     <h2 v-for="doc in docs" :key="doc">{{ doc.mocoso }}</h2>
   </div> -->
   <div class="flex flex-col h-screen">
-    <Header class="shadow-md p-4 mb-6 bg-white" />
+    <Header class="shadow-2xl p-2 mb-6 " />
     <router-view />
     <div class="fixed inset-x-0 bottom-0">
       <Footer />
