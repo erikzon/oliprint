@@ -15,12 +15,12 @@
         lg:mx-0
         cursor-pointer
       "
-      @click="this.$router.push('/')"
+      @click="$router.push('/')"
     />
-    <button @click="this.$router.push('About')" class="botonHeader">
+    <button @click="$router.push('About')" class="botonHeader">
       NOSOTROS
     </button>
-    <button @click="this.$router.push('Cotizar')" class="botonHeader">
+    <button @click="$router.push('Cotizar')" class="botonHeader">
       COTIZAR
     </button>
     <div class="lg:border-0 border rounded-full my-auto">
@@ -28,7 +28,7 @@
         alt="login"
         src="../assets/account_circle.svg"
         class="lg:w-14 lg:h-14 mx-auto lg:mx-0 cursor-pointer logincolor"
-        @click="this.$router.push('Login')"
+        @click="$router.push('Login')"
       />
       <span class="text-white lg:hidden">CUENTA</span>
     </div>

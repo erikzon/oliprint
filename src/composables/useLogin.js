@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { ref } from "vue"
-import { Auth } from '../firebase/config'
+import { auth } from '../firebase/config'
 
 const error = ref(null)
 const isPending = ref(false)
@@ -10,13 +10,13 @@ const login = async (email, password) => {
     isPending.value = true;
 
     try {
-        const LoginRef = await signInWithEmailAndPassword(Auth, email, password) 
+        const res = await signInWithEmailAndPassword(auth, email, password) 
         error.value = null
         isPending.value = false;
         return res
     } catch (err) {
-        console.log(err.value);
-        error.value = 'Incorrect login credentails'
+        console.log(err);
+        error.value = 'Correo o Contraseña incorrecta'
         isPending.value = false;
     }
 }
