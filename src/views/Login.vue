@@ -83,11 +83,14 @@
           <span v-if="state.loginMode">INGRESAR</span>
           <span v-else>REGISTRARME</span>
         </button>
-        <h1 class="rounded bg-red-200 my-3 mx-4 text-xl" v-if="!state.passwordMatch">
+        <h1
+          class="rounded bg-red-200 my-3 mx-4 text-xl"
+          v-if="!state.passwordMatch"
+        >
           Contraseñas no coinciden.
         </h1>
         <h1 class="rounded bg-red-200 my-3 mx-4 text-xl" v-if="error">
-          {{error}}
+          {{ error }}
         </h1>
         <h1
           class="mt-4 text-lg text-purple-600 cursor-pointer font-bold"
@@ -122,7 +125,7 @@ const state = reactive({
   passwordMatch: true,
 });
 
-const { error, login} = useLogin();
+const { error, login } = useLogin();
 const { signup } = useSignup();
 const router = useRouter();
 
@@ -134,7 +137,6 @@ const handleSubmit = () => {
   if (state.loginMode) {
     TriggerLogin();
   } else {
-    console.log("vine paca");
     if (state.password === state.passwordConfirm) {
       TrigeerSignup();
     } else {
@@ -149,15 +151,15 @@ const handleSubmit = () => {
 };
 
 const TriggerLogin = async () => {
-    const loginAttemp = await login(state.email, state.password);
-    if (error) {
-        router.push({ name: "Favorites" });
-    }
+  const loginAttemp = await login(state.email, state.password);
+  if (!error.value) {
+    router.push({ name: "Favorites" });
+  }
 };
 
 const TrigeerSignup = async () => {
-    signup(state.email, state.password);
-
+  signup(state.email, state.password);
+  router.push({ name: "Favorites" });
 };
 </script>
 
