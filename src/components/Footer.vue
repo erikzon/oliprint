@@ -46,7 +46,7 @@
         <img class="h-16 w-16" src="../assets/oliprint2.svg" />
       </div>
       <div>
-        <span class="text-xl font-bold text-black">Contactanos</span>
+        <span class="text-xl font-bold text-black">Contáctanos</span>
         <p class="text-gray-600 text-lg">Sera un gusto atenderte 😊</p>
       </div>
       <button

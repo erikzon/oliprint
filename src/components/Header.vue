@@ -17,18 +17,17 @@
       "
       @click="$router.push('/')"
     />
-    <button @click="$router.push('About')" class="botonHeader">
-      NOSOTROS
+    <button @click="$router.push('Galeria')" class="botonHeader">
+      GALERIA
     </button>
     <button @click="$router.push('Cotizar')" class="botonHeader">
       COTIZAR
     </button>
-    <div class="lg:border-0 border rounded-full my-auto">
+    <div class="lg:border-0 border rounded-full my-auto" @click="handleClick">
       <img
         alt="login"
         src="../assets/account_circle.svg"
         class="lg:w-14 lg:h-14 mx-auto lg:mx-0 cursor-pointer logincolor"
-        @click="$router.push('Login')"
       />
       <span class="text-white lg:hidden">CUENTA</span>
     </div>
@@ -36,6 +35,19 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+import getUser from "../composables/getUser";
+
+const router = useRouter();
+const { user } = getUser();
+
+const handleClick = async () => {
+  if (!user) {
+    router.push("Login");
+  } else {
+    router.push("Favorites");
+  }
+};
 </script>
 
 <style>
@@ -52,7 +64,6 @@
           lg:w-4/5
           lg:mx-auto
           my-auto;
-          
 }
 .headercolor {
   background-color: rgb(33, 10, 54) !important;
