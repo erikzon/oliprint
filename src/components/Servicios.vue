@@ -12,6 +12,9 @@
             su utlizacion son las macetas, figuras, stands, letreros y un largo
             etc.
           </p>
+          <router-link :to="{ name: 'Galeria', params: { filterTag: '3D' } }" class="botonGaleria"
+            >VISITAR GALERIA #3D</router-link
+          >
         </div>
         <div class="contenedor-imagen-servicios">
           <img src="../assets/groot3d.webp" alt="" class="imagen-servicios" />
@@ -29,6 +32,9 @@
             de algodon y poliester. <br />
             Tambien colocamos vinil textil para una mayor definicion.
           </p>
+          <router-link :to="{ name: 'Galeria', params: { filterTag: 'Sublimación' } }" class="botonGaleria"
+            >VISITAR GALERIA #SUBLIMACION</router-link
+          >
         </div>
         <div class="contenedor-imagen-servicios">
           <img
@@ -47,8 +53,11 @@
             Mediante un laser de gran potencia y altisima precision podemos
             generar imagenes sobre caucho, madera, papel, aceto. Esta tecnica
             permite incluso grabar fotografias dando un toque unico a nuestros
-            productos.
+            productos. Debido a que la tecnica graba directamente el material este efecto perdura indefinidamente sobre el material lo que crea un recuerdo de larguisima duracion.
           </p>
+          <router-link :to="{ name: 'Galeria', params: { filterTag: 'Laser' } }" class="botonGaleria"
+            >VISITAR GALERIA #LASER</router-link
+          >
         </div>
         <div class="contenedor-imagen-servicios">
           <img
@@ -122,7 +131,7 @@
 }
 
 .tarjetas {
-  @apply shadow-inner bg-gray-50 rounded-tl-3xl rounded-br-3xl p-3 m-4  ;
+  @apply shadow-inner bg-gray-50 rounded-tl-3xl rounded-br-3xl p-3 m-4;
 }
 
 .imagen-servicios {
@@ -130,7 +139,18 @@
   @apply rounded border-purple-900 border-8 shadow-xl mx-auto;
 }
 
-.contenedor-imagen-servicios{
+.contenedor-imagen-servicios {
   @apply m-6 lg:mt-0 lg:w-48 lg:col-span-2;
+}
+
+.botonGaleria {
+  @apply text-purple-900
+          lg:text-lg
+          rounded-full
+          py-2
+          px-4          
+          border border-purple-900
+          hover:text-white
+          hover:bg-purple-900
 }
 </style>

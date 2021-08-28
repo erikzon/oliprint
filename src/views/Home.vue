@@ -46,28 +46,6 @@
         Guatemala. Trayendo innovacion y creatividad. 🙌
       </p>
     </div>
-    <!-- <div class="m-6 lg:m-0 lg:w-52 col-span-1 row-span-1">
-      <img
-        src="../assets/groot3d.webp"
-        alt=""
-        class="rounded-xl border-white border-8 shadow-xl object-contain"
-      />
-    </div>
-
-    <div class="m-6 lg:m-0 lg:w-52">
-      <img
-        src="../assets/sublimacion.webp"
-        alt=""
-        class="rounded-xl border-white border-8 shadow-xl"
-      />
-    </div>
-    <div class="m-6 lg:m-0 lg:w-52">
-      <img
-        src="../assets/gaudyLaser.webp"
-        alt=""
-        class="rounded-xl border-white border-8 shadow-xl"
-      />
-    </div> -->
   </div>
   <Servicios />
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="leading-loose px-6 lg:mx-12 lg:px-0">
+  <div class="px-4 mx-0 lg:mx-12 lg:px-0">
     <form
       class="max-w-xl py-10 px-4 w-full bg-white rounded shadow-xl"
       @submit.prevent="handleSubmit"
@@ -39,7 +39,7 @@
           class="w-full px-2 py-2 text-gray-600 bg-gray-200 inputs"
           type="text"
           required=""
-          placeholder="Separa cada etiqueta con una coma"
+          placeholder="Separa cada etiqueta con una coma sin espacios"
           v-model="tags"
         />
       </div>
@@ -120,7 +120,7 @@ const handleSubmit = async () => {
     const res = await addDocu({
       Name: name.value,
       Description: description.value,
-      Tags: tags.value,
+      Tags: tags.value.split(","),
       Foto: url.value,
       filePath: filePath.value,
       createdAt: serverTimestamp(),

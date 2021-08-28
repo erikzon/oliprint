@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 leading-loose lg:mx-4 bg-white rounded shadow-xl">
+  <div class="px-6 leading-loose mx-4 bg-white rounded shadow-xl">
     <h1
       class="
         text-xl

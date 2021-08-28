@@ -1,12 +1,17 @@
 <template>
   <h1 class="text-white font-bold text-4xl">Bienvenido {{ user.email }}</h1>
   <div
-    class="bg-white mx-auto px-4 my-2  rounded-tl-3xl rounded-br-3xl grid grid-cols-4"
+    class="
+      bg-white
+      mx-auto
+      px-4
+      my-2
+      rounded-tl-3xl rounded-br-3xl
+      grid grid-cols-4
+    "
     @click="handleLogout"
   >
-   <span class="col-span-3 text-xl mt-1 mx-1">
-    CERRAR SESION
-   </span>
+    <span class="col-span-3 text-xl mt-1 mx-1"> CERRAR SESION </span>
     <img
       alt="login"
       src="../assets/logout.svg"

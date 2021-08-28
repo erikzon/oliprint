@@ -45,6 +45,7 @@ const routes = [
         path: '/Galeria',
         name: 'Galeria',
         component: Galeria,
+        props: true
     },
     {
         path: '/Favorites',
