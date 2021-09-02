@@ -32,7 +32,7 @@
             de algodon y poliester. <br />
             Tambien colocamos vinil textil para una mayor definicion.
           </p>
-          <router-link :to="{ name: 'Galeria', params: { filterTag: 'Sublimación' } }" class="botonGaleria"
+          <router-link :to="{ name: 'Galeria', params: { filterTag: 'sublimacion' } }" class="botonGaleria"
             >VISITAR GALERIA #SUBLIMACION</router-link
           >
         </div>
@@ -55,7 +55,7 @@
             permite incluso grabar fotografias dando un toque unico a nuestros
             productos. Debido a que la tecnica graba directamente el material este efecto perdura indefinidamente sobre el material lo que crea un recuerdo de larguisima duracion.
           </p>
-          <router-link :to="{ name: 'Galeria', params: { filterTag: 'Laser' } }" class="botonGaleria"
+          <router-link :to="{ name: 'Galeria', params: { filterTag: 'laser' } }" class="botonGaleria"
             >VISITAR GALERIA #LASER</router-link
           >
         </div>

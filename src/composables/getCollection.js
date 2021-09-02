@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { ref } from "vue";
 import { fireStore } from "../firebase/config";
 
@@ -9,10 +9,10 @@ const getDocuments = (collectionName) => {
     const load = async (collectionName) => {
         try {
             const collectionRef = collection(fireStore, collectionName)
-            //const collectionRef = collection(fireStore, "test")
-            const res = await getDocs(collectionRef);
+            const q = query(collectionRef, orderBy('createdAt', "desc"));
+            const res = await getDocs(q);
             docs.value = res.docs.map(doc => {
-                return doc.data()
+               return doc.data()
             });
             // asi accedi hasta el string
             //console.log("el res.docs es", docs.value[0].mocoso);

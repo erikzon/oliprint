@@ -55,7 +55,6 @@
         >
         <textarea
           class="inputs"
-          required
           placeholder="Descripcion del producto"
           v-model="description"
         ></textarea>
@@ -77,7 +76,9 @@
         >
           AGREGAR
         </button>
-        <h2 class="bg-green-300 rounded mt-4" v-if="uploadSuccess">AGREGADO EXITOSAMENTE A LA GALERIA</h2>
+        <h2 class="bg-green-300 rounded mt-4" v-if="uploadSuccess">
+          AGREGADO EXITOSAMENTE A LA GALERIA
+        </h2>
       </div>
     </form>
   </div>
@@ -92,7 +93,7 @@ import { serverTimestamp } from "@firebase/firestore";
 const { filePath, url, uploadImage } = useStorage();
 const { error, addDocu } = useCollection("Producto");
 
-const types = ["image/png", "image/jpeg"];
+const types = ["image/png", "image/jpeg", "image/webp"];
 const name = ref("");
 const tags = ref([]);
 const description = ref("");
@@ -114,6 +115,7 @@ const handleChange = (e) => {
 };
 
 const handleSubmit = async () => {
+  console.log(file.value);
   if (file.value) {
     isPending.value = true;
     await uploadImage(file.value);
@@ -123,6 +125,7 @@ const handleSubmit = async () => {
       Tags: tags.value.split(","),
       Foto: url.value,
       filePath: filePath.value,
+      likes: 0,
       createdAt: serverTimestamp(),
     });
     //end

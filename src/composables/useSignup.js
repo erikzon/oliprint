@@ -7,7 +7,6 @@ const isPending = ref(false)
 
 const signup = async (email, password) => {
     error.value = null
-
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password)
         if (!res) {

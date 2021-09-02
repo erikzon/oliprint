@@ -15,7 +15,7 @@
     >
       Ultimos mensajes recibidos en la pestaña "cotizar"
     </h1>
-    <div v-if="error" class="bg-red-600">
+    <div v-if="error" class="bg-red-300">
       HABO UN ERROR AL INTENTAR OBTENER LOS ULTIMOS MENSAJES
     </div>
     <div v-else>
