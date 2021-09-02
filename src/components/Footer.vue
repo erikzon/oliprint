@@ -3,27 +3,26 @@
     <div
       v-if="show"
       class="
-        px-4
-        mx-4
-        py-2
-        mb-4
+        px-2
+        mx-3
+        py-3
+        lg:py-1
+        mb-6
         bottom-0
         right-0
         bg-white
         lg:w-96
         rounded-xl
-        shadow-md
+        shadow-lg
         items-center
         flex
         lg:fixed
-        space-x-4
-        
+        space-x-2
       "
     >
       <button
         class="
-          font-light
-          text-base
+          font-extrabold
           rounded-full
           bg-white
           text-purple-800
@@ -47,14 +46,14 @@
         <img class="h-16 w-16" src="../assets/oliprint2.svg" />
       </div>
       <div>
-        <span class="text-xl font-medium text-black">Contactanos</span>
-        <p class="text-gray-600">Sera un gusto atenderte 😊</p>
+        <span class="text-xl font-bold text-black">Contáctanos</span>
+        <p class="text-gray-600 text-lg">Sera un gusto atenderte 😊</p>
       </div>
       <button
         class="
           px-2
           text-purple-800
-          font-light
+          font-medium
           rounded-full
           border border-purple-800
           hover:text-white

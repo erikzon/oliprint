@@ -10,6 +10,7 @@
           bg-gradient-to-r
           from-green-400
           to-blue-500
+          text-2xl
         "
         >SIGUENOS EN NUESTRAS REDES SOCIALES</span
       >
@@ -88,7 +89,7 @@ export default {};
 }
 
 .text-Nosotros {
-  @apply text-left mx-3;
+  @apply text-left mx-3 text-lg ;
 }
 
 .tarjetas {

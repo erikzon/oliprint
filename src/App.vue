@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-screen">
-    <Header class="shadow-md p-4 mb-6 bg-white " />
+    <Header class="shadow-2xl p-2 mb-6 " />
     <router-view />
     <div class="fixed inset-x-0 bottom-0">
       <Footer />
@@ -11,7 +11,7 @@
 <script setup>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Home from "./components/Home.vue";
+import Home from "./views/Home.vue";
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
@@ -19,11 +19,17 @@ import Home from "./components/Home.vue";
 
 <style>
 body {
-  @apply bg-gray-100;
+  background-image: radial-gradient(
+    circle farthest-corner at 10.2% 55.8%,
+    rgb(96, 9, 107) 0%,
+    rgb(36, 6, 91) 46.2%,
+    rgb(73, 20, 112) 90.1%
+  );
+  background-size: cover;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
